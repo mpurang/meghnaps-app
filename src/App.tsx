@@ -38,7 +38,7 @@ export default class App extends React.Component<any, any, IState> {
     const apiData = await apiCall.json();
     // console.log(apiData);
 
-  if (city && country) {
+  if (city && country && apiData.cod !== "404") {
       this.setState({
         description: apiData.weather[0].description,
         error: "",
@@ -47,10 +47,11 @@ export default class App extends React.Component<any, any, IState> {
         temperature: apiData.main.temp,
         visibility: apiData.visibility
       });
-    } else {
+    }
+    else {
         this.setState({
           description: undefined,
-          error: "Please enter the location",
+          error: "Please enter a valid location",
           humidity: undefined,
           pressure: undefined,
           temperature: undefined,

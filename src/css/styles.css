@@ -98,19 +98,26 @@
     font-size: 20px;
     letter-spacing: 2px;
     padding-top: 0px;
-    padding-left: 530px;
+    padding-left: 500px;
   }
   
   .wHead{
     color: #2B1B17;
-    padding: 20px 0 2px 0;
+    padding: 10px 0 2px 0;
     font-weight: bold;
   }
   
   
   .wBody {
-    color: #fff;
-    font-weight: 200;
+    color: #ffffff;
+    font-weight: lighter;
+  }
+
+  .description{
+    font-weight: bold;
+    font-size: 30px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding-left: 100px;
   }
   
   .wError {

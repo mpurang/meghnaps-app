@@ -7,13 +7,19 @@ export default class Weather extends React.Component<any, any> {
     public render() {
         return (
                 <div>
-                    City: {this.props.city}, Country: {this.props.country}
-                    Description: {this.props.description},
-                    {this.props.error}
-                    Humidity: {this.props.humidity}, Pressure: {this.props.pressure}
-                    Sunrise: {this.props.sunrise}, Sunset: {this.props.sunset}
-                    High: {this.props.temp_max}, Low: {this.props.temp_min}
-                    Temperature: {this.props.temperature}, Visibility: {this.props.visibility}
+                    { 
+                        this.props.description &&  <p className="wHead"> <span className="wBody">{this.props.description}</span> </p> 
+                    }
+                
+                    { 
+                        this.props.humidity && this.props.pressure && <p className="wHead"> Humidity: <span className="wBody">{this.props.humidity}</span> &nbsp;&nbsp;&nbsp;&nbsp;  Pressure:  <span className="wBody">{this.props.pressure}</span> </p> 
+                    }        
+                
+                    { 
+                        this.props.temperature && this.props.visibility && <p className="wHead"> Temperature: <span className="wBody">{this.props.temperature}</span> &nbsp;&nbsp;&nbsp;&nbsp; Visibility:  <span className="wBody">{this.props.visibility}</span> </p> 
+                    }
+                              
+                    { this.props.error && <p className="wError"> {this.props.error} </p> }
                 </div>
         );
     }

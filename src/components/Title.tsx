@@ -5,8 +5,7 @@ export default class Title extends React.Component<{}> {
         return (
                 <div>
                     {/* React components must have a wrapper node/element */}
-                    <h1>Welcome!</h1>
-                    <p>Find out temperature, conditions and more.. </p>
+                    <h2 className="titleText">Current weather forecast ...</h2>
 
                 </div>
         );

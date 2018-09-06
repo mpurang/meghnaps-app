@@ -1,6 +1,4 @@
 import * as React from 'react';
-import './App.css';
-// import Form from "./components/Form";
 import Title from "./components/Title";
 import Weather from "./components/Weather";
 
@@ -8,16 +6,10 @@ import Weather from "./components/Weather";
 const apiKey = "5744e229152711c749843d3bcb405c7e";
 
 interface IState{
-  city: any,
-  country: any,
   description: any,
   error: any,
   humidity: any,
   pressure: any,
-  sunrise: any,
-  sunset: any,
-  temp_max: any,
-  temp_min:any,
   temperature: any,
   visibility: any
 }
@@ -27,23 +19,15 @@ export default class App extends React.Component<any, any, IState> {
   constructor(props: any) {
     super(props)
     this.state = {
-      city: "",
-      country: "",
       description: "",
       error: "",
       humidity: "",
       pressure: "",
-      sunrise: "",
-      sunset: "",
-      temp_max: "",
-      temp_min: "",
       temperature: "",
       visibility: ""
     }
   }
   public getWeather = async (e:any) => {
-    // tslint:disable-next-line:no-console
-    console.log("test");
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
@@ -52,36 +36,23 @@ export default class App extends React.Component<any, any, IState> {
 
     // convert it to json format
     const apiData = await apiCall.json();
-    // tslint:disable-next-line:no-console
-    console.log(apiData);
+    // console.log(apiData);
 
   if (city && country) {
       this.setState({
-        city: apiData.name,
-        country: apiData.sys.country,
         description: apiData.weather[0].description,
         error: "",
         humidity: apiData.main.humidity,
         pressure: apiData.main.pressure,
-        sunrise: apiData.sys.sunrise,
-        sunset: apiData.sys.sunset,
-        temp_max: apiData.main.temp_max,
-        temp_min: apiData.main.temp_min,
         temperature: apiData.main.temp,
         visibility: apiData.visibility
       });
     } else {
         this.setState({
-          city: undefined,
-          country: undefined,
           description: undefined,
-          error: "Please enter the location.",
+          error: "Please enter the location",
           humidity: undefined,
           pressure: undefined,
-          sunrise: undefined,
-          sunset: undefined,
-          temp_max: undefined,
-          temp_min: undefined,
           temperature: undefined,
           visibility: undefined
       });
@@ -92,31 +63,36 @@ export default class App extends React.Component<any, any, IState> {
 
   public render() {
     return (
-      <div className="container-fluid">
-        {/* 'this' refers to the App and getWeather is props */}
-        <Title />
-        <form onSubmit = {this.getWeather} >
-                
-                <input type="text" name = "city" placeholder = "City name"/>
-                <input type="text" name = "country" placeholder = "Country name"/>
-                <input type="submit" value="Search" />
-
+      <div>
+        <div className="outerC">
+          <div className="innerC">
+          <div className="titleC">
+            <Title />
+          </div>
+            {/* 'this' refers to the App */}
+            <div className="formC">
+            <form onSubmit = {this.getWeather} >
+                  <input type="text" name = "city" placeholder = "City name"/>
+                  <input type="text" name = "country" placeholder = "Country name"/>
+                  <button>Search >></button>
             </form>
-        <Weather 
-            city={this.state.city}
-            country = {this.state.country}
-            description = {this.state.description}
-            error = {this.state.error}
-            humidity = {this.state.humidity}
-            pressure = {this.state.pressure}
-            sunrise = {this.state.sunrise}
-            sunset = {this.state.sunset}
-            temp_max = {this.state.temp_max}
-            temp_min = {this.state.temp_min}
-            temperature = {this.state.temperature}
-            visibility = {this.state.visibility}
-            />
+            </div>
+
+            <div className="weatherC">
+            <Weather
+                  description = {this.state.description}
+                  error = {this.state.error}
+                  humidity = {this.state.humidity}
+                  pressure = {this.state.pressure}
+                  temperature = {this.state.temperature}
+                  visibility = {this.state.visibility}
+                  />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+// <input type="submit" value="Search" />

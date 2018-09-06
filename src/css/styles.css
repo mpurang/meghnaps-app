@@ -1,7 +1,122 @@
-h1 {
-    font-size: 70px;
-}
+.outerC{
+    background: url("nine.jpg") no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+  }
+  
+  .innerC {
+    height: 90%;
+    width: 90%;
+    background: url("inner14.jpg") no-repeat;
+    margin: 0 auto;
+    background-size: cover;
+    box-shadow: 15px 30px 40px 10px rgba(0,0,0,0.75);
+  }
+  
+  .titleC {
+    height: 12%;
+    width: 100%;
+    background-color: #2B1B17;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
 
-h2 {
-    font-size: 50px;
-}
+  .titleText{
+    font-style: normal;
+    font-weight: lighter;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+  }
+
+  .formC{
+    padding-top: 35px;
+    padding-left: 28px;
+
+  }
+
+  input[type="text"] {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #2B1B17;
+    width: 17%;
+    color: #ffffff;
+    background-color: transparent;
+    letter-spacing: 2px;
+    margin-right: 45px;
+    font-size: 25px;
+    font-weight: lighter;
+    padding-left: 2px;
+  }
+
+  
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+    box-shadow: 0 0 4px rgba(0,0,0,.15);
+    background-color: transparent;
+  }
+  
+  button {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:#2B1B17;
+    color: #ffffff;
+    font-weight: 100;
+  }
+  
+  button:active {
+    outline: none;
+  }
+  
+  .toolB{
+    background-size: cover;
+    display: flex;
+    color:#2B547E;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Consolas, monaco, monospace;
+  }
+
+  .centerText{
+    align-items: center;
+    align-content: center;
+  }
+
+  .weatherC{
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding-top: 0px;
+    padding-left: 530px;
+  }
+  
+  .wHead{
+    color: #2B1B17;
+    padding: 20px 0 2px 0;
+    font-weight: bold;
+  }
+  
+  
+  .wBody {
+    color: #fff;
+    font-weight: 200;
+  }
+  
+  .wError {
+    color: #2B1B17;
+    font-size: 25px;
+    padding-top: 20px;
+    padding-left:0;
+    font-weight: bold;
+  }

@@ -32,7 +32,7 @@ export default class App extends React.Component<any, any, IState> {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     // make an API call
-    const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
+    const apiCall = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=metric`);
 
     // convert it to json format
     const apiData = await apiCall.json();
